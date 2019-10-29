@@ -13,3 +13,16 @@
 .nav-link {
   color: white;
 }
+
+a.nav-link {
+    color: rgba(0, 0, 0, 0.5);
+    &:hover {
+      color: black;
+    }
+}
+
+
+.nav-link.active {
+  color: black;
+}
+
