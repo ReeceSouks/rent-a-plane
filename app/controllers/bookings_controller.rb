@@ -11,8 +11,9 @@ class BookingsController < ApplicationController
     @booking.price = (@booking.end_date - @booking.start_date) * @airplane.price_per_day
     # @booking.airplane = Booking.find(params[:user_id][:airplane_id]) unless params[:user_id][:airplane_id].blank?
     if @booking.save
-      redirect_to booking_path(@booking)
+      redirect_to profile_path
     else
+      raise
       render 'airplanes/show'
     end
   end
