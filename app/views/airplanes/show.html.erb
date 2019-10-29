@@ -11,3 +11,11 @@
 <h3><%= review.rating %></h3>
 <p><%= review.content %></p>
 <% end  %>
+
+
+<%= simple_form_for [@airplane, @booking], html: { class: 'form-inline' } do |f| %>
+  <%= f.input :start_date, input_html: {value: ""} %>
+  <%= f.input :end_date, input_html: {value: ""} %>
+  <%= f.submit "Reserve", class: "btn btn-primary" %>
+  <%= link_to airplane_path(@airplane) %>
+<% end %>
