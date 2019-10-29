@@ -1,6 +1,6 @@
 .footer {
-  // background: #F4F4F4;
-  background-image: linear-gradient(to bottom right, #718687, #52787c);
+  background: #F4F4F4;
+  // background-image: linear-gradient(to bottom right, #718687, #52787c);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -14,7 +14,7 @@
 }
 .footer-links a {
   color: black;
-  opacity: 0.15;
+  opacity: 0.60;
   text-decoration: none;
   font-size: 24px;
   padding: 0px 10px;
@@ -25,7 +25,7 @@
 
 .footer-copyright a {
   color: black;
-  opacity: 0.25;
+  opacity: 0.60;
 }
 
 .footer-copyright a:hover {
