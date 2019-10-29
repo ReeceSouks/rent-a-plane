@@ -1,2 +1,11 @@
 <h1>Airplanes#new</h1>
 <p>Find me in app/views/airplanes/new.html.erb</p>
+<%= simple_form_for(@airplane) do |p| %>
+  <div class="form-inputs">
+    <%= p.input :title %>
+  </div>
+
+  <div class="form-actions">
+    <%= p.button :submit %>
+  </div>
+<% end %>
