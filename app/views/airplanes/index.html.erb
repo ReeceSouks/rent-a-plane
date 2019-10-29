@@ -1,8 +1,10 @@
-<h1>Airplanes#index</h1>
-<p>Find me in app/views/airplanes/index.html.erb</p>
+<div class="index-container">
+<h1>Here are the searches that match your query!</h1>
+<p>Make a selection:</p>
 <% @airplanes.each do |airplane| %>
 <h2><%= link_to "#{airplane.title}", airplane_path(airplane.id) %></h2>
 <% end %>
+<div>
 
 
 
