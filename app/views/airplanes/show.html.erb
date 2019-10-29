@@ -1,2 +1,13 @@
 <h1>Airplanes#show</h1>
 <p>Find me in app/views/airplanes/show.html.erb</p>
+<h1><%= @airplane.title %></h1>
+<h3><%= @airplane.airport %></h3>
+<p><%= @airplane.description %></p>
+<p><%= "$#{@airplane.price_per_day}" %></p>
+<h2></h2>
+
+<h1>Reviews</h1>
+<% @reviews.each do |review| %>
+<h3><%= review.rating %></h3>
+<p><%= review.content %></p>
+<% end  %>
