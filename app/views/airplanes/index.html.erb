@@ -1,12 +1,8 @@
 <div class="index-container">
-<h1>Here are the searches that match your query!</h1>
-<p>Make a selection:</p>
-
-
+<h1>These are the available planes in your area:</h1>
 <div class="container">
   <div class="row">
     <% @airplanes.each do |airplane| %>
-
       <div class="col-md-4 mb-3">
         <%= link_to airplane do %>
         <div class="card-trip">
@@ -19,10 +15,7 @@
           </div>
         </div>
       <% end %>
-
       </div>
-
-
     <% end %>
   </div>
 </div>
