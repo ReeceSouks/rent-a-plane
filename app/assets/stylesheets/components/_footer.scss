@@ -1,5 +1,5 @@
 .footer {
-  background: #F4F4F4;
+  background: white;
   // background-image: linear-gradient(to bottom right, #718687, #52787c);
   display: flex;
   align-items: center;
@@ -7,6 +7,10 @@
   height: 64px;
   padding: 0px 50px;
   color: rgba(0,0,0,0.3);
+  font-family: 'Montserrat', sans-serif;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
 }
 .footer-links {
   display: flex;
