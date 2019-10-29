@@ -5,6 +5,7 @@ class AirplanesController < ApplicationController
 
   def show
     @airplane = Airplane.find(params[:id])
+    @reviews = @airplane.reviews
   end
 
   def new
