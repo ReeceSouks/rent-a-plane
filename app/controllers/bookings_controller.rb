@@ -13,7 +13,6 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to profile_path
     else
-      raise
       render 'airplanes/show'
     end
   end
