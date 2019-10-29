@@ -11,9 +11,9 @@ class AirplanesController < ApplicationController
   def new
     @airplane = Airplane.new
     if user_signed_in?
-      if current_user.profile.present?
+      if current_user.present?
       else
-        redirect_to new_profile_path
+        redirect_to new_user_registration_path
         flash[:alert] = 'Please sign up before booking'
       end
     else
