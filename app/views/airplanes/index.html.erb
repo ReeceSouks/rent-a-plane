@@ -1,8 +1,12 @@
 <h1>Airplanes#index</h1>
 <p>Find me in app/views/airplanes/index.html.erb</p>
+<h3>Add listing</h3>
+<h2><%=  %></h2>
 <% @airplanes.each do |airplane| %>
 <h2><%= link_to "#{airplane.title}", airplane_path(airplane.id) %></h2>
 <% end %>
+
+
 
 
 

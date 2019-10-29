@@ -4,12 +4,22 @@ class AirplanesController < ApplicationController
   end
 
   def show
-    @airplane = Airplane.find(params[:id])
+    set_airplane
     @reviews = @airplane.reviews
   end
 
   def new
     @airplane = Airplane.new
+    if user_signed_in?
+      if current_user.profile.present?
+      else
+        redirect_to new_profile_path
+        flash[:alert] = 'Please sign up before booking'
+      end
+    else
+      redirect_to user_session_path
+      flash[:alert] = 'Please log in before booking'
+    end
   end
 
   def create
@@ -22,13 +32,14 @@ class AirplanesController < ApplicationController
   end
 
   def edit
+    set_airplane
   end
 
   def update
   end
 
   def destroy
-    @airplane = Airplane.find(params[:id])
+    set_airplane
     @airplane.destroy
     redirect_to airplane_path(@airplane)
   end
@@ -40,6 +51,6 @@ class AirplanesController < ApplicationController
   end
 
   def airplane_params
-    params.require(:airplane).permit(:name)
+    params.require(:airplane).permit(:title)
   end
 end
