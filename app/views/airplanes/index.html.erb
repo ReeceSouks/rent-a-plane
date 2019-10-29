@@ -2,10 +2,30 @@
 <h1>Here are the searches that match your query!</h1>
 <p>Make a selection:</p>
 
-<% @airplanes.each do |airplane| %>
-<h2><%= link_to "#{airplane.title}", airplane_path(airplane.id) %></h2>
-<% end %>
-<div>
+
+<div class="container">
+  <div class="row">
+    <% @airplanes.each do |airplane| %>
+
+      <div class="col-md-4 mb-3">
+        <%= link_to airplane do %>
+        <div class="card-trip">
+          <img src="https://robbreportedit.files.wordpress.com/2018/05/pilatus-pc-24.jpg?w=1000" />
+          <div class="card-trip-infos">
+            <div>
+              <h2><%= airplane.title %></h2>
+            </div>
+            <h2 class="card-trip-pricing">$<%= airplane.price_per_day %></h2>
+          </div>
+        </div>
+      <% end %>
+
+      </div>
+
+
+    <% end %>
+  </div>
+</div>
 
 
 
