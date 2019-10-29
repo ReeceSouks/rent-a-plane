@@ -35,6 +35,10 @@ class AirplanesController < ApplicationController
 
   private
 
+  def set_airplane
+    @airplane = Airplane.find(params[:id])
+  end
+
   def airplane_params
     params.require(:airplane).permit(:name)
   end
