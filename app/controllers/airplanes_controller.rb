@@ -6,6 +6,7 @@ class AirplanesController < ApplicationController
   def show
     set_airplane
     @reviews = @airplane.reviews
+    @booking = Booking.new
   end
 
   def new
