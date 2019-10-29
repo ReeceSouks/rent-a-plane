@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-airplanes = ["Airbus", "Boeing 747", "G5", "G3", "Cessna", "Boeing 737", "Boeing 797"]
+airplanes = ["Airbus A320 family", "Boeing 747", "G5", "G3", "Cessna", "Boeing 737", "Boeing 797", "Learjet 60", "Bombardier Global 6000", "Embraer Legacy 650", "Embraer Phenom 100"]
 
 User.create(email: 'test@gmail.com', password: "password", first_name: Faker::Name.first_name, last_name: Faker::Name.last_name )
 
@@ -15,14 +15,14 @@ User.create(email: 'test@gmail.com', password: "password", first_name: Faker::Na
 end
 puts "users ok"
 20.times do
-  airplane = Airplane.create(user: User.all.sample, description: Faker::Lorem.paragraph, airport: Faker::Address.city, price_per_day: rand(5000..20000), title: "Beautiful #{airplanes.sample}" )
+  airplane = Airplane.create(user: User.all.sample, description: Faker::Lorem.paragraph, airport: Faker::Nation.capital_city, price_per_day: rand(5000..20000), title: airplanes.sample )
 end
 puts "airplanes created ok"
 
 20.times do
   booking = Booking.create(user: User.all.sample, airplane: Airplane.all.sample, price: rand(5000..20000), approved: false , start_date: Date.today + rand(10...20), end_date: Date.today + rand(21...30) )
 end
-puts "Bokings created ok"
+puts "Bookings created ok"
 
 20.times do
   review = Review.create(booking: Booking.all.sample, rating: rand(1..5), content: Faker::Lorem.paragraph)
