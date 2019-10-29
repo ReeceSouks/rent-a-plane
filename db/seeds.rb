@@ -15,7 +15,7 @@ User.create(email: 'test@gmail.com', password: "password", first_name: Faker::Na
 end
 puts "users ok"
 20.times do
-  airplane = Airplane.create(user: User.all.sample, description: Faker::Lorem.paragraph, airport: Faker::Address.city, price_per_day: rand(5000..20000), title: "Beautiful #{airplanes.sample}" )
+  airplane = Airplane.create(user: User.all.sample, description: Faker::Lorem.paragraph, airport: Faker::Address.city, price_per_day: rand(5000..20000), title: "#{airplanes.sample}" )
 end
 puts "airplanes created ok"
 
