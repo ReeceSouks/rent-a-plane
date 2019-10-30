@@ -6,7 +6,11 @@
       <div class="col-md-4 mb-3">
         <%= link_to airplane do %>
         <div class="card-trip">
-          <img src="https://robbreportedit.files.wordpress.com/2018/05/pilatus-pc-24.jpg?w=1000" />
+          <% if airplane.photo.filename.nil? %>
+            <img src="https://robbreportedit.files.wordpress.com/2018/05/pilatus-pc-24.jpg?w=1000" />
+          <% else %>
+            <%= cl_image_tag airplane.photo %>
+          <% end %>
           <div class="card-trip-infos">
             <div>
               <h2><%= airplane.title %></h2>
