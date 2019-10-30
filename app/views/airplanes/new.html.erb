@@ -3,9 +3,12 @@
 <%= simple_form_for(@airplane) do |p| %>
   <div class="form-inputs">
     <%= p.input :title %>
+    <%= p.input :description %>
+    <%= p.input :airport %>
+    <%= p.input :price_per_day %>
   </div>
 
   <div class="form-actions">
-    <%= p.button :submit %>
+    <button><%= p.button :submit %></button>
   </div>
 <% end %>
