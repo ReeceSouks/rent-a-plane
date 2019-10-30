@@ -1,17 +1,21 @@
 <div class="text-center row">
     <div class="col-md-4 offset-md-4 card-trip" id="booking-show">
-      <h2 style="font-size: 30px"><strong>My Upcoming Flight:</strong></h2>
-      <div class="booking-show-p">
-        <p>From: <%= @booking.start_date %></p>
-        <p>To: <%= @booking.end_date %></p>
-        <p>Plane id: <%= @booking.airplane.id %></p>
-        <p><strong>Total price: $</strong><%= @booking.price %></p>
-        <div class="booking destroy">
-        <%= link_to booking_path, method: :delete, data: { confirm: 'Are you sure you want to cancel this trip?'} do %>
-          <button>Cancel Booking</button>
-        <% end %>
-        </div>
-    </div>
+      <% if @booking.start_date > DateTime.now.to_date %>
+        <h2 style="font-size: 30px"><strong>My Upcoming Flight:</strong></h2>
+        <div class="booking-show-p">
+          <p>From: <%= @booking.start_date %></p>
+          <p>To: <%= @booking.end_date %></p>
+          <p>Plane id: <%= @booking.airplane.id %></p>
+          <p><strong>Total price: $</strong><%= @booking.price %></p>
+          <div class="booking destroy">
+          <%= link_to booking_path, method: :delete, data: { confirm: 'Are you sure you want to cancel this trip?'} do %>
+            <button>Cancel Booking</button>
+          <% end %>
+          </div>
+      </div>
+      <% else %>
+        <h2>Where you've been</h2>
+      <% end %>
   </div>
 </div>
 
