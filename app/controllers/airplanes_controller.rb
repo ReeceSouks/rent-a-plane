@@ -38,6 +38,7 @@ class AirplanesController < ApplicationController
   end
 
   def update
+    set_airplane
     if @airplane.update(airplane_params)
       redirect_to airplane_path(@airplane)
     else
@@ -48,7 +49,7 @@ class AirplanesController < ApplicationController
   def destroy
     set_airplane
     @airplane.destroy
-    redirect_to airplane_path(@airplane)
+    redirect_to profile_path
   end
 
   private

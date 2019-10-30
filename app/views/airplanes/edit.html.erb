@@ -1,2 +1,17 @@
-<h1>Airplanes#edit</h1>
-<p>Find me in app/views/airplanes/edit.html.erb</p>
+<div class="container_login banner-flat" style="background-image: url('#');">
+  <div class="form_card">
+    <h1>Edit Listing</h1>
+    <h2>What changes do you want to make?</h2>
+    <%= simple_form_for (@airplane) do |f| %>
+      <div class="col-xs-12 col-sm-4-offset-3">
+      <%= f.input :title %>
+      <%= f.input :price_per_day %>
+      <%= f.input :description %>
+      <%= f.input :airport %>
+      <%= f.input :photo %>
+      <%= f.input :photo_cache, as: :hidden %>
+      <%= f.submit "Save changes", class: "btn btn-primary" %>
+      </div>
+    <% end %>
+  </div>
+</div>
