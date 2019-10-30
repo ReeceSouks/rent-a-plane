@@ -19,16 +19,23 @@
          <% end  %>
          <h2><%= "$#{@airplane.price_per_day}" %></h2>
         </div>
-      </div>
+        <%= link_to "Edit listing", edit_airplane_path %>
+        <%= link_to airplane_path, method: :delete, data: { confirm: 'Are you sure you want to remove this listing?'} do %>
+            <button>Remove listing</button>
+        <% end %>
+        <%= link_to "Back to profile", profile_path %>
     </div>
     </div>
-
-    <div class="col-md-6" pd-6px>
-      <%= simple_form_for [@airplane, @booking] do |f| %>
-      <%= f.input :start_date, input_html: {value: ""} %>
+  </div>
+  <% if @airplane.user_id != current_user.id %>
+  <div class="col-md-6" pd-6px>
+    <%= simple_form_for [@airplane, @booking] do |f| %>
+    <%= f.input :start_date, input_html: {value: ""} %>
       <%= f.input :end_date, input_html: {value: ""} %>
       <%= f.submit "Reserve", class: "btn btn-primary" %>
-      <% end %>
-    </div>
+    <% end %>
+  </div>
+  <% else %>
+  <% end %>
   </div>
 </div>
