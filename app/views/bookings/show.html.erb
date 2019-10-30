@@ -1,8 +1,12 @@
 <h1>Bookings#show</h1>
 <p>Find me in app/views/bookings/show.html.erb</p>
 
-<%= simple_form_for :search, url: root_path, method: "GET", html: { class: 'form-inline' } do |f| %>
-  <%= f.input :name, input_html: {value: ""} %>
-  <%= f.submit "Reserve", class: "btn btn-primary" %>
-<% end %>
-
+<H2 ><strong>My Upcoming Flights:</strong></H2>
+    <% current_user.bookings.each do |booking|%>
+      <div class="col-xs-6 col-md-4">
+        <p>From: <%= booking.start_date %></p>
+        <p>To: <%= booking.end_date %></p>
+        <p><%= booking.airplane.id %></p>
+        <p>Total price: $ <%= booking.price %> .</p>
+      </div>
+    <% end%>

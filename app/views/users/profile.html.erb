@@ -1,4 +1,10 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
-<p> Hi, user! </p>
-<p> You don
+<h1> Hello <%=@user.first_name.capitalize%>, Welcome to your profile!</h1>
+
+    <h2><strong>My details:</strong></h2>
+    <h4><strong>First Name:</strong> <%= @user.first_name %></h4>
+    <h4><strong>Last Name:</strong> <%= @user.last_name %></h4>
+    <h4><strong>Email:</strong> <%= @user.email %></h4>
+
+<% @bookings.each do |booking| %>
+<%=link_to 'Current Bookings', bookings_show_path(booking.id) %>
+<% end %>
