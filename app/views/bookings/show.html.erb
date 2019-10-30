@@ -8,8 +8,8 @@
         <p><strong>Total price: $</strong><%= @booking.price %></p>
         <div class="booking destroy">
         <%= link_to booking_path, method: :delete, data: { confirm: 'Are you sure you want to cancel this trip?'} do %>
-          <button>Cancel Booking</button>
         <% end %>
+          <button>Cancel Booking</button>
         </div>
     </div>
   </div>
