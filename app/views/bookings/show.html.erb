@@ -1,10 +1,11 @@
-<h1>Bookings#show</h1>
-<p>Find me in app/views/bookings/show.html.erb</p>
-
-<H2 ><strong>My Upcoming Flights:</strong></H2>
-      <div class="col-xs-6 col-md-4">
+<div class="text-center row">
+    <div class="col-md-4 offset-md-4 card-trip" id="booking-show">
+      <h2 style="font-size: 30px"><strong>My Upcoming Flight:</strong></h2>
+      <div class="booking-show-p">
         <p>From: <%= @booking.start_date %></p>
         <p>To: <%= @booking.end_date %></p>
-        <p><%= @booking.airplane.id %></p>
-        <p>Total price: $ <%= @booking.price %> .</p>
-      </div>
+        <p>Plane id: <%= @booking.airplane.id %></p>
+        <p><strong>Total price: $</strong><%= @booking.price %></p>
+    </div>
+  </div>
+
