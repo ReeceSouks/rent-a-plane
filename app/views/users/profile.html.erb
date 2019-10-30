@@ -5,8 +5,12 @@
     <h4><strong>Last Name:</strong> <%= @user.last_name %></h4>
     <h4><strong>Email:</strong> <%= @user.email %></h4>
 
+<% @airplanes.each do |airplane| %>
+<%=link_to 'Current Listing', airplane_path(airplane) %>
+<% end %>
+
 <% @bookings.each do |booking| %>
-<%=link_to 'Current Bookings', bookings_show_path(booking.id) %>
+<%=link_to 'Upcoming Flights', booking_path(booking) %>
 <% end %>
 
 <h1><strong>What can we help you find, <%= @user.first_name %> ?</strong></h1>

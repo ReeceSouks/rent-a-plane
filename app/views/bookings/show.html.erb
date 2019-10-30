@@ -2,11 +2,9 @@
 <p>Find me in app/views/bookings/show.html.erb</p>
 
 <H2 ><strong>My Upcoming Flights:</strong></H2>
-    <% current_user.bookings.each do |booking|%>
       <div class="col-xs-6 col-md-4">
-        <p>From: <%= booking.start_date %></p>
-        <p>To: <%= booking.end_date %></p>
-        <p><%= booking.airplane.id %></p>
-        <p>Total price: $ <%= booking.price %> .</p>
+        <p>From: <%= @booking.start_date %></p>
+        <p>To: <%= @booking.end_date %></p>
+        <p><%= @booking.airplane.id %></p>
+        <p>Total price: $ <%= @booking.price %> .</p>
       </div>
-    <% end%>
