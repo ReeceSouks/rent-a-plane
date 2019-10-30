@@ -2,22 +2,27 @@
   <div class="row">
     <div class="col-md-6">
       <div class="card-trip text-center">
-  <%= cl_image_tag @airplane.photo %>
-  <div class="card-trip-infos">
-    <div>
-      <h1>Plane: <%= @airplane.title %></h1>
-      <h2>Location:<%= @airplane.airport %></h2>
-      <p>description: <%= @airplane.description %></p>
-      <h2>Reviews</h2>
-      <% @reviews.each do |review| %>
-     <p>rating: <%= review.rating %></p>
-     <p>review: <%= review.content %></p>
-     <% end  %>
-     <h2><%= "$#{@airplane.price_per_day}" %></h2>
+      <% if @airplane.photo.filename.nil? %>
+        <img src="https://robbreportedit.files.wordpress.com/2018/05/pilatus-pc-24.jpg?w=1000" />
+      <% else %>
+        <%= cl_image_tag @airplane.photo %>
+      <% end %>
+      <div class="card-trip-infos">
+        <div>
+          <h1>Plane: <%= @airplane.title %></h1>
+          <h2>Location: <%= @airplane.airport %></h2>
+          <p>description: <%= @airplane.description %></p>
+          <h2>Reviews</h2>
+          <% @reviews.each do |review| %>
+         <p>rating: <%= review.rating %></p>
+         <p>review: <%= review.content %></p>
+         <% end  %>
+         <h2><%= "$#{@airplane.price_per_day}" %></h2>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
     </div>
+
     <div class="col-md-6" pd-6px>
       <%= simple_form_for [@airplane, @booking] do |f| %>
       <%= f.input :start_date, input_html: {value: ""} %>
