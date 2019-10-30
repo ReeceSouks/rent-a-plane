@@ -16,7 +16,7 @@
     <div class="d-flex justify-content-center pt-5 flex-column align-items-center">
       <h3 class="text-center">My airplanes:</h3>
       <% @airplanes.each do |airplane| %>
-        <%=link_to 'Current Listing', airplane_path(airplane) %>
+        <%=link_to airplane.title , airplane_path(airplane) %>
       <% end %>
       <h3 class="text-center">My bookings:</h3>
       <ul class="pb-5 px-0 d-flex flex-wrap justify-content-center">

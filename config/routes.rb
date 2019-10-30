@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'bookings/destroy'
   get 'users/show'
   get 'pages/home'
   devise_for :users
@@ -7,11 +8,12 @@ Rails.application.routes.draw do
   get 'user', to: 'users#profile', as: :profile
   # resources :users, only: [ :show ] # I want to show the airplane listing/booking the user have when opening the user profile
   resources :airplanes do
-    resources :bookings, only: [ :create, :destroy]
+    resources :bookings, only: [ :create ]
   end
-  resources :bookings, only: [ :index, :show ] do
+  resources :bookings, only: [ :index, :show, :destroy] do
    resources :reviews, only: [ :create ]
  end
   # Reviews cannot be edited and will all be shown at the page when you want to reserve the plane with description, etc
   # what if I want to have two separate reviews? one from the host one from the guest
+  # I added new route for booking destory and it wont work
 end

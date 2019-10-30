@@ -6,6 +6,13 @@
         <p>To: <%= @booking.end_date %></p>
         <p>Plane id: <%= @booking.airplane.id %></p>
         <p><strong>Total price: $</strong><%= @booking.price %></p>
+        <div class="booking destroy">
+        <%= link_to booking_path, method: :delete, data: { confirm: 'Are you sure you want to cancel this trip?'} do %>
+          <button>Cancel Booking</button>
+        <% end %>
+        </div>
     </div>
   </div>
+</div>
 
+<%= link_to "Back to my bookings", bookings_path %>

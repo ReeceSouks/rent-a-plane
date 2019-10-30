@@ -25,7 +25,7 @@ class AirplanesController < ApplicationController
 
   def create
     @airplane = Airplane.new(airplane_params)
-
+    @airplane.user = current_user
     if @airplane.save
       redirect_to airplane_path(@airplane), notice: "Your plane has been listed!"
     else
@@ -58,6 +58,6 @@ class AirplanesController < ApplicationController
   end
 
   def airplane_params
-    params.require(:airplane).permit(:user_id, :airplane_id, :description, :airport, :price_per_day, :title, :photo)
+    params.require(:airplane).permit(:airplane_id, :description, :airport, :price_per_day, :title, :photo)
   end
 end

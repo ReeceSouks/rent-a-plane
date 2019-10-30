@@ -1,7 +1,12 @@
 <h1>Bookings#index</h1>
 <p>Find me in app/views/bookings/index.html.erb</p>
-<ul>
-<% @bookings.each do |booking| %>
-  <li><%= booking %></li>
-<% end %>
-</ul>
+<div class="cards">
+  <div class="booking show">
+  <ul>
+  <% @bookings.each do |booking| %>
+    <li><%= link_to "#{booking.airplane.title}", booking_path(booking) %></li>
+  <% end %>
+  </ul>
+  </div>
+
+</div>
