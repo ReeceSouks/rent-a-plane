@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get 'user', to: 'users#profile', as: :profile
   # resources :users, only: [ :show ] # I want to show the airplane listing/booking the user have when opening the user profile
   resources :airplanes do
-    resources :bookings, only: [ :create, :destroy]
+    resources :bookings, only: [ :create ]
   end
   resources :bookings, only: [ :index, :show, :destroy] do
    resources :reviews, only: [ :create ]
