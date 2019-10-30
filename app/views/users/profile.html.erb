@@ -1,3 +1,18 @@
+<h1> Hello <%=@user.first_name.capitalize%>, Welcome to your profile!</h1>
+
+    <h2><strong>My details:</strong></h2>
+    <h4><strong>First Name:</strong> <%= @user.first_name %></h4>
+    <h4><strong>Last Name:</strong> <%= @user.last_name %></h4>
+    <h4><strong>Email:</strong> <%= @user.email %></h4>
+
+<% @airplanes.each do |airplane| %>
+<%=link_to 'Current Listing', airplane_path(airplane) %>
+<% end %>
+
+<% @bookings.each do |booking| %>
+<%=link_to 'Upcoming Flights', booking_path(booking) %>
+<% end %>
+
 <h1><strong>What can we help you find, <%= @user.first_name %> ?</strong></h1>
 <p>Some cards</p>
 <h2>Continue your search</h2>
