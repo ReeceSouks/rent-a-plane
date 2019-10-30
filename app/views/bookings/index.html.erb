@@ -4,12 +4,7 @@
   <div class="booking show">
   <ul>
   <% @bookings.each do |booking| %>
-    <li><%= booking.airplane.title %></li>
-    <div class="booking destroy">
-    <%= link_to booking_path(booking), method: :delete, data: { confirm: 'Are you sure you want to cancel this trip?'} do %>
-    <p class="fa fa-trash"></p>
-    <% end %>
-  </div>
+    <li><%= link_to "#{booking.airplane.title}", booking_path(booking) %></li>
   <% end %>
   </ul>
   </div>
