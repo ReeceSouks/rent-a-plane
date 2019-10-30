@@ -13,10 +13,10 @@
           <%= link_to "Home", pages_home_path, class: "nav-link #{params[:action] == 'home' ? 'active' : nil}" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Add Listing", airplanes_new_path, class: "nav-link #{params[:action] == 'home' ? 'active' : nil}" %>
+          <%= link_to "Add Listing", new_airplane_path, class: "nav-link #{params[:action] == 'new' ? 'active' : nil}" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Trips", bookings_show_path, class: "nav-link #{params[:action] == 'home' ? 'active' : nil}" %>
+          <%= link_to "Trips", bookings_path, class: "nav-link #{params[:action] == 'index' ? 'active' : nil}" %>
         </li>
         <li class="nav-item dropdown">
           <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png" />
