@@ -6,7 +6,7 @@
 
 }
 
-.container h1 {
+.container > h1 {
   color: white;
   padding-top: 80px;
   text-align: center;
@@ -14,7 +14,7 @@
   font-size: 100px;
 }
 
-.container p {
+.container > p {
   color: white;
   text-align: center;
   margin: 7px;
