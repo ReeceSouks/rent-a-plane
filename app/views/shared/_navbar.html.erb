@@ -7,24 +7,37 @@
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <%= link_to "Home", pages_home_path, class: "nav-link #{params[:action] == 'home' ? 'active' : nil}" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to "Sign up", new_user_registration_path, class: "nav-link #{params[:action] == 'new' && params[:controller] == 'devise/registrations' ? 'active' : nil}" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to "Log in", user_session_path, class: "nav-link #{params[:action] == 'new' && params[:controller] == 'devise/sessions' ? 'active' : nil}" %>
-      </li>
-      <li class="nav-item dropdown">
-        <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png" />
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <%= link_to "Profile", profile_path, class: "dropdown-item" %>
-          <%= link_to "Sign out", destroy_user_session_path, class: "dropdown-item", method: :delete %>
-          <!-- <a class="dropdown-item" href="#">Another action</a> -->
-        </div>
-      </li>
-    </ul>
+    <% if user_signed_in? %>
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <%= link_to "Home", pages_home_path, class: "nav-link #{params[:action] == 'home' ? 'active' : nil}" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Add Listing", new_airplane_path, class: "nav-link #{params[:action] == 'new' ? 'active' : nil}" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Trips", bookings_path, class: "nav-link #{params[:action] == 'index' ? 'active' : nil}" %>
+        </li>
+        <li class="nav-item dropdown">
+          <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png" />
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+            <%= link_to "Profile", profile_path, class: "dropdown-item" %>
+            <%= link_to "Sign out", destroy_user_session_path, class: "dropdown-item", method: :delete %>
+          </div>
+        </li>
+      </ul>
+    <% else %>
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <%= link_to "Home", pages_home_path, class: "nav-link #{params[:action] == 'home' ? 'active' : nil}" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Sign up", new_user_registration_path, class: "nav-link #{params[:action] == 'new' && params[:controller] == 'devise/registrations' ? 'active' : nil}" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Log in", user_session_path, class: "nav-link #{params[:action] == 'new' && params[:controller] == 'devise/sessions' ? 'active' : nil}" %>
+        </li>
+      </ul>
+    <% end %>
   </div>
 </div>
