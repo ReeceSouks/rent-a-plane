@@ -12,6 +12,6 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for(resource)
     # user_path(:id)
-    profile_path
+    stored_location_for(resource) || profile_path
   end
 end
