@@ -18,23 +18,23 @@
          <p>review: <%= review.content %></p>
          <% end  %>
          <h2><%= "$#{@airplane.price_per_day}" %></h2>
+          <%= link_to "Edit listing", edit_airplane_path %>
+          <%= link_to "Remove listing", airplane_path, method: :delete, data: { confirm: 'Are you sure you want to remove this listing?'} %>
+          <%= link_to "Back to profile", profile_path %>
         </div>
-        <%= link_to "Edit listing", edit_airplane_path %>
-        <%= link_to airplane_path, method: :delete, data: { confirm: 'Are you sure you want to remove this listing?'} do %>
-            <button>Remove listing</button>
-        <% end %>
-        <%= link_to "Back to profile", profile_path %>
     </div>
     </div>
   </div>
   <% if @airplane.user_id != current_user.id %>
-  <div class="col-md-6" pd-6px>
-    <%= simple_form_for [@airplane, @booking] do |f| %>
-    <%= f.input :start_date, input_html: {value: ""} %>
-      <%= f.input :end_date, input_html: {value: ""} %>
-      <%= f.submit "Reserve", class: "btn btn-primary" %>
+  <div id='airplane-booking-dates' data-unavailable="<%= @airplane.unavailable_dates.to_json %>">
+    <% if current_user.id != @airplane.user_id  %>
+       <%= simple_form_for([@airplane, @booking]) do |f| %>
+           <%= f.input :start_date, as: :string, type: :text %>
+           <%= f.input :end_date, as: :string, type: :text %>
+           <%= f.submit "Book", class: "btn btn-primary" %>
+        <% end %>
     <% end %>
-  </div>
+ </div>
   <% else %>
   <% end %>
   </div>
