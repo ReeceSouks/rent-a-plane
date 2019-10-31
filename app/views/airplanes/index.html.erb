@@ -1,5 +1,9 @@
 <div class="index-container text-center">
+  <% if !Airplane.near(params[:query], 10).empty? %>
 <h1>These are the available planes in your area:</h1>
+<% else %>
+<h3><%= @message %></h3>
+<% end %>
 <div class="container mb-5">
   <div class="row pb-5">
     <% @airplanes.each do |airplane| %>
