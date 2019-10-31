@@ -1,0 +1,16 @@
+.btn {
+  background-color: $purple;
+  border-radius: 10px;
+  padding: 20px 30px 20px 30px;
+  font-size: 16px;
+  font-weight: 800;
+  color: white;
+  font-family: Helvetica;
+  text-transform: uppercase;
+  box-shadow: 0 5px 0 rgba(17,17,31,.25);
+  margin-bottom: 20px;
+  text-decoration: none;
+    &:hover {
+      background-color: black;
+    }
+}

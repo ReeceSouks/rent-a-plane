@@ -82,6 +82,23 @@ h2#signup-font, h2.form-h2 {
     }
 }
 
+.form-actions-edit .btn {
+  background-color: $purple;
+  border-radius: 30px;
+  padding: 10px 20px 10px 20px;
+  font-size: 14px;
+  font-weight: 800;
+  color: white;
+  font-family: Helvetica;
+  text-transform: uppercase;
+  box-shadow: 0 5px 0 rgba(17,17,31,.25);
+  margin-bottom: 20px;
+  text-decoration: none;
+    &:hover {
+      background-color: black;
+    }
+}
+
 a {
   text-decoration: none;
   font-weight: bold;
