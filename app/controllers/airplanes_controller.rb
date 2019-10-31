@@ -1,6 +1,6 @@
 class AirplanesController < ApplicationController
   def index
-    if params[:query].present? && !Airplane.near(params[:query], 10).empty?
+    if params[:query].present? && !Airplane.near(params[:query], 10000).empty?
       @airplanes = Airplane.near(params[:query], 10)
     else
       @airplanes = Airplane.geocoded
