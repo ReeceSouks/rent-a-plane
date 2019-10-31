@@ -1,14 +1,18 @@
 class AirplanesController < ApplicationController
   def index
-    @airplanes = Airplane.geocoded
-
-    @markers = @airplanes.map do |airplane|
-      {
-        lat: airplane.latitude,
-        lng: airplane.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { airplane: airplane })
-      }
+    if params[:query].present? && !Airplane.near(params[:query], 10).empty?
+      @airplanes = Airplane.near(params[:query], 10)
+    else
+      @airplanes = Airplane.geocoded
+      @message = "There are no available planes in your area, please see other locations"
     end
+      @markers = @airplanes.map do |airplane|
+        {
+          lat: airplane.latitude,
+          lng: airplane.longitude,
+          infoWindow: render_to_string(partial: "info_window", locals: { airplane: airplane })
+        }
+      end
   end
 
   def show
