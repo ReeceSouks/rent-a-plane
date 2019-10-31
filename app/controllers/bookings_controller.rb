@@ -5,6 +5,8 @@ class BookingsController < ApplicationController
 
   def show
     @booking = Booking.find(params[:id])
+    @review = Review.new
+    @past_bookings = Booking.where("end_date < ?", "#{Date.today}")
   end
 
   def create
