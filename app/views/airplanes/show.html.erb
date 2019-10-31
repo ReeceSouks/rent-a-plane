@@ -26,13 +26,15 @@
     </div>
   </div>
   <% if @airplane.user_id != current_user.id %>
-  <div class="col-md-6" pd-6px>
-    <%= simple_form_for [@airplane, @booking] do |f| %>
-    <%= f.input :start_date, input_html: {value: ""} %>
-      <%= f.input :end_date, input_html: {value: ""} %>
-      <%= f.submit "Reserve", class: "btn btn-primary" %>
+  <div id='airplane-booking-dates' data-unavailable="<%= @airplane.unavailable_dates.to_json %>">
+    <% if current_user.id != @airplane.user_id  %>
+       <%= simple_form_for([@airplane, @booking]) do |f| %>
+           <%= f.input :start_date, as: :string, type: :text %>
+           <%= f.input :end_date, as: :string, type: :text %>
+           <%= f.submit "Book", class: "btn btn-primary" %>
+        <% end %>
     <% end %>
-  </div>
+ </div>
   <% else %>
   <% end %>
   </div>

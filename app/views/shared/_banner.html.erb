@@ -2,15 +2,15 @@
   <div class="container">
     <h1>Rent a Jet</h1>
     <p>Fly private anywhere around the world.</p>
-    <form class="d-flex justify-content-center mt-5 flex-column w-50 mx-auto">
+    <form class="d-flex justify-content-center mt-5 flex-column w-50 mx-auto" action="/airplanes">
       <div class="d-flex justify-content-center">
         <div class="form-group w-50 mr-5">
           <label for="departure-city" style="color: white;">Departure City</label>
-          <input type="depart" class="form-control" id="depart" placeholder="New York (JFK)">
+          <input type="text" class="form-control" id="depart-city" placeholder="New York (JFK)">
         </div>
         <div class="form-group w-50">
           <label for="arrival-city" style="color: white;">Arrival City</label>
-          <input type="arrival" class="form-control" id="arrival" placeholder="Bali (DPS)">
+          <input type="text" class="form-control" id="arrive-city" placeholder="Bali (DPS)">
 
         </div>
       </div>
@@ -18,11 +18,11 @@
       <div class="d-flex justify-content-center">
         <div class="form-group w-50 mr-5">
           <label for="departure" style="color: white;">Choose date</label>
-          <input type="depart" class="form-control" id="depart" placeholder="00/00/0000">
+          <input type="text" readonly="readonly" class="form-control" id="depart">
         </div>
         <div class="form-group w-50">
           <label for="arrival" style="color: white;">Choose date</label>
-          <input type="arrival" class="form-control" id="arrival" placeholder="00/00/0000">
+          <input type="text" readonly="readonly" class="form-control" id="arrival">
 
         </div>
       </div>
