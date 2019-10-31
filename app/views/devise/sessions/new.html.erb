@@ -1,9 +1,6 @@
 <div style="display:block">
   <div class="form-bg">
-    <div class="form-layout">
-      <div class="form-layout-row">
-        <div style="padding:200px" class="form-card flex full-width justify-center align-group-center-md">
-          <div class="form-card-2 full-width" id="login" >
+         <div class="form-card-2 full-width" id="login" >
           <h2 class="form-h2">Welcome back to PrivateFly!</h2>
             <div class="form-link text-md-left">
             <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -25,8 +22,5 @@
             </div>
             <%= render "devise/shared/links" %>
           </div>
-        </div>
-      </div>
-    </div>
   </div>
 </div>

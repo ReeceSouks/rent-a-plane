@@ -1,5 +1,10 @@
 .form-bg {
   background-image: url("https://source.unsplash.com/HL6gzlxnMjM/1600x900");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 20px;
+  height: calc(100vh - 140px);
 }
 
 .form-card {
@@ -24,10 +29,12 @@
   background-clip: border-box;
   background-attachment: scroll;
   box-shadow: 10px 5px 5px rgba(17,17,31,.25);
+  margin: 0 auto;
 }
 
 #signup {
-      max-width: 600px;
+  max-width: 600px;
+
 }
 
 #login {
