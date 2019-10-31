@@ -1,24 +1,34 @@
-<h1>Bookings#index</h1>
-<p>Find me in app/views/bookings/index.html.erb</p>
-<div class="cards">
-  <div class="booking show">
-  <h2>Upcoming Trips</h2>
-  <ul>
-  <% @bookings.each do |booking| %>
-    <% if booking.start_date > DateTime.now.to_date  %>
-      <li><%= link_to "#{booking.airplane.title}", booking_path(booking) %></li>
-    <% else %>
-    <% end %>
-  <% end %>
-  </ul>
-  <h2>Previous Trips</h2>
-  <ul>
-  <% @bookings.each do |booking| %>
-    <% if booking.start_date < DateTime.now.to_date  %>
-      <li><%= link_to "#{booking.airplane.title}", booking_path(booking) %></li>
-    <% else %>
-    <% end %>
-  <% end %>
-  </ul>
+<div class="container pb-5">
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="cards">
+         <div class="booking show">
+          <h2>Upcoming Trips</h2>
+            <ul>
+            <% @bookings.each do |booking| %>
+            <% if booking.start_date > DateTime.now.to_date  %>
+            <li><%= link_to "#{booking.airplane.title}", booking_path(booking) %></li>
+            <% else %>
+            <% end %>
+          <% end %>
+            </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="cards">
+         <div class="booking show">
+          <h2>Previous Trips</h2>
+            <ul>
+            <% @bookings.each do |booking| %>
+            <% if booking.start_date < DateTime.now.to_date  %>
+            <li><%= link_to "#{booking.airplane.title}", booking_path(booking) %></li>
+            <% else %>
+          <% end %>
+        <% end %>
+            </ul>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
