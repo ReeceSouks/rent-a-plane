@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 airplanes = ["Airbus A320 family", "Boeing 747", "G5", "G3", "Cessna", "Boeing 737", "Boeing 797", "Learjet 60", "Bombardier Global 6000", "Embraer Legacy 650", "Embraer Phenom 100"]
-
+cities = ["New York", "Boston", "Los Angeles"]
 User.create(email: 'test@gmail.com', password: "password", first_name: Faker::Name.first_name, last_name: Faker::Name.last_name )
 
 20.times do
@@ -15,7 +15,7 @@ User.create(email: 'test@gmail.com', password: "password", first_name: Faker::Na
 end
 puts "users ok"
 20.times do
-  airplane = Airplane.create(user: User.all.sample, description: Faker::Lorem.paragraph, airport: Faker::Nation.capital_city, price_per_day: rand(5000..20000), title: airplanes.sample )
+  airplane = Airplane.create(user: User.all.sample,  description: Faker::Lorem.paragraph, airport: Faker::Nation.capital_city, price_per_day: rand(5000..20000), title: airplanes.sample )
 end
 puts "airplanes created ok"
 
