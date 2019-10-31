@@ -18,12 +18,10 @@
          <p>review: <%= review.content %></p>
          <% end  %>
          <h2><%= "$#{@airplane.price_per_day}" %></h2>
+          <%= link_to "Edit listing", edit_airplane_path %>
+          <%= link_to "Remove listing", airplane_path, method: :delete, data: { confirm: 'Are you sure you want to remove this listing?'} %>
+          <%= link_to "Back to profile", profile_path %>
         </div>
-        <%= link_to "Edit listing", edit_airplane_path %>
-        <%= link_to airplane_path, method: :delete, data: { confirm: 'Are you sure you want to remove this listing?'} do %>
-            <button>Remove listing</button>
-        <% end %>
-        <%= link_to "Back to profile", profile_path %>
     </div>
     </div>
   </div>
