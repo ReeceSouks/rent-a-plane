@@ -9,9 +9,9 @@
       <% end %>
       <div class="card-trip-infos">
         <div>
-          <h1>Plane: <%= @airplane.title %></h1>
+          <h1> <%= @airplane.title %></h1>
           <h2>Location: <%= @airplane.airport %></h2>
-          <p>description: <%= @airplane.description %></p>
+          <p>Description: <%= @airplane.description %></p>
           <h2>Reviews</h2>
           <% @reviews.each do |review| %>
          <p>rating: <%= review.rating %></p>
@@ -32,7 +32,7 @@
            <%= f.input :start_date, as: :string, type: :text %>
            <%= f.input :end_date, as: :string, type: :text %>
            <%= f.input :departure, as: :string, type: :text %>
-           <%= f.input :arrival, as: :string, type: :text %>
+           <%= f.input :arrival, as: :string, type: :text, input_html: {id: "search-airport"}  %>
            <%= f.submit "Book", class: "btn btn-primary" %>
         <% end %>
     <% end %>
