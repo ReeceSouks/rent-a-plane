@@ -14,6 +14,8 @@ class AirplanesController < ApplicationController
         }
       end
   end
+    # when Date.now > Booking.end_date
+    # #@airplane.airport = bookings.arrival
 
   def show
     set_airplane
