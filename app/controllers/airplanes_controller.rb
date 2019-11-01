@@ -15,10 +15,6 @@ class AirplanesController < ApplicationController
       end
   end
 
-  # I need to show the airplane.airport as bookings arrival after the booking date?
-    # when Date.now > Booking.end_date
-    # #@airplane.airport = bookings.arrival
-
   def show
     set_airplane
     @reviews = @airplane.reviews
