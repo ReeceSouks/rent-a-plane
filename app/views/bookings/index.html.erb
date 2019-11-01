@@ -1,13 +1,14 @@
+<div class="background-container" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1530476219733-88085e45aa2c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1713&q=80);">
 <div class="container pb-5">
   <div class="row pb-5 pt-5">
     <div class="col-sm-6">
       <div class="cards">
          <div class="booking show">
-          <h2>Upcoming Trips</h2>
+          <h2 class="booking-title">Upcoming Trips</h2>
 
             <% @bookings.each do |booking| %>
             <% if booking.start_date > DateTime.now.to_date  %>
-            <li><%= link_to "Airport: #{booking.airplane.airport}, Type: #{booking.airplane.title}, #{booking.start_date} to #{booking.end_date}", booking_path(booking) %></li>
+            <div class="booking-container"><%= link_to "Airport: #{booking.airplane.airport}, Type: #{booking.airplane.title}, #{booking.start_date.strftime("%b %d, %Y")} to #{booking.end_date.strftime("%b %d, %Y")}", booking_path(booking), class:"booking-link" %></div>
             <% else %>
             <% end %>
           <% end %>
@@ -20,11 +21,11 @@
     <div class="col-sm-6">
       <div class="cards">
          <div class="booking show">
-          <h2>Previous Trips</h2>
+          <h2 class ="booking-title">Previous Trips</h2>
 
             <% @bookings.each do |booking| %>
             <% if booking.start_date < DateTime.now.to_date  %>
-            <li><%= link_to "Airport: #{booking.airplane.airport}, Type: #{booking.airplane.title}, #{booking.start_date} to #{booking.end_date}", booking_path(booking) %></li>
+            <div class="booking-container"><%= link_to "Airport: #{booking.airplane.airport}, Type: #{booking.airplane.title}, #{booking.start_date.strftime("%b %d, %Y")} to #{booking.end_date.strftime("%b %d, %Y")}", booking_path(booking), class:"booking-link" %></div>
             <% else %>
           <% end %>
         <% end %>
@@ -34,4 +35,5 @@
       </div>
     </div>
   </div>
+</div>
 </div>
