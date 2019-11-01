@@ -25,7 +25,7 @@
     </div>
     </div>
   </div>
-  <% if @airplane.user_id != current_user.id %>
+  <% if user_signed_in? && @airplane.user_id != current_user.id %>
   <div id='airplane-booking-dates' data-unavailable="<%= @airplane.unavailable_dates.to_json %>">
     <% if current_user.id != @airplane.user_id  %>
        <%= simple_form_for([@airplane, @booking]) do |f| %>
