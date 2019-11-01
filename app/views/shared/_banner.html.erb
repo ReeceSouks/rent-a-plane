@@ -13,14 +13,14 @@
       <div class="d-flex justify-content-center">
         <div class="form-group w-50 mr-5">
           <label for="departure" style="color: white;">Choose date</label>
-          <input type="text" readonly="readonly" class="form-control" id="depart">
+          <input type="text" readonly="readonly" name="start_date" class="form-control" id="depart">
         </div>
         <div class="form-group w-50">
           <label for="arrival" style="color: white;">Choose date</label>
-          <input type="text" readonly="readonly" class="form-control" id="arrival">
+          <input type="text" readonly="readonly" name="end_date" class="form-control" id="arrival">
 
         </div>
       </div>
-      <button type="submit" id="submit-button" class="btn btn-dark d-flex justify-content-center mx-auto"><%= link_to "Search Jets", airplanes_path, class:'sub-button' %></button>
+      <button type="submit" id="submit-button" class="btn btn-dark d-flex justify-content-center mx-auto">Search Jets</button>
     </form>
   </div>
