@@ -3,6 +3,7 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @booking = Booking.find(params[:booking_id])
     @review.booking = @booking
+    authorize @review
     if @review.save
       redirect_to airplane_path(@review.booking.airplane)
     else

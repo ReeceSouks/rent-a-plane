@@ -5,6 +5,7 @@ class BookingsController < ApplicationController
 
   def show
     @booking = Booking.find(params[:id])
+    authorize @booking
     @review = Review.new
     @past_bookings = Booking.where("end_date < ?", "#{Date.today}")
   end
@@ -15,6 +16,7 @@ class BookingsController < ApplicationController
         @profile = current_user
         @airplane = Airplane.find(params[:airplane_id])
         @booking = Booking.new(booking_params)
+        authorize @booking
         @booking.airplane = @airplane
         @booking.user = current_user
         @booking.price = (@booking.end_date - @booking.start_date) * @airplane.price_per_day
@@ -39,6 +41,7 @@ class BookingsController < ApplicationController
 
   def destroy
     @booking = Booking.find(params[:id])
+    authorize @booking
     @booking.destroy
     redirect_to bookings_path
   end
