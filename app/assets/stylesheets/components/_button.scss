@@ -1,7 +1,6 @@
-.btn {
+.btn.btn-purple {
   background-color: $purple;
-  border-radius: 10px;
-  padding: 20px 30px 20px 30px;
+  border-radius: 30px;
   font-size: 16px;
   font-weight: 800;
   color: white;
@@ -12,5 +11,59 @@
   text-decoration: none;
     &:hover {
       background-color: black;
+      color: white;
     }
 }
+
+.form-actions-edit .btn.btn-purple {
+  padding: 10px 20px 10px 20px;
+  font-size: 14px;
+}
+
+.form-actions .btn.btn-purple {
+  padding: 20px 30px 20px 30px;
+}
+
+.btn.btn-review {
+  background-color: $light-purple;
+  border-radius: 99999rem;
+  border: 2px solid black;
+  padding: 14px 40px 14px 40px;
+  font-size: 16px;
+  font-weight: 800;
+  color: black;
+  font-family: Helvetica;
+  text-transform: uppercase;
+  box-shadow: 0 5px 0 rgba(17,17,31,.25);
+  margin-bottom: 20px;
+  text-decoration: none;
+    &:hover {
+      background-color: black;
+      color: white;
+    }
+}
+
+#submit-button {
+  background-color: $turq;
+  font-weight: 700;
+  cursor: pointer;
+  overflow: visible;
+  color: white;
+  font-size: 24px;
+  line-height: 30px;
+  padding: 6px 24px 6px 24px;
+  width: 316px;
+  border: none;
+  border-radius: 5px;
+  transition: all 0.5s;
+  margin: 5px;
+    &:hover {
+      opacity: 1;
+      background-color: #00887D;
+    }
+}
+
+.sub-button {
+  color: white;
+}
+
