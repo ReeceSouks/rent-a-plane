@@ -18,6 +18,7 @@ class BookingsController < ApplicationController
         @booking = Booking.new(booking_params)
         authorize @booking
         @booking.airplane = @airplane
+        @booking.departure = @airplane.airport
         @booking.user = current_user
         @booking.price = (@booking.end_date - @booking.start_date) * @airplane.price_per_day
     # @booking.airplane = Booking.find(params[:user_id][:airplane_id]) unless params[:user_id][:airplane_id].blank?
@@ -48,5 +49,5 @@ class BookingsController < ApplicationController
 end
 
 def booking_params
-  params.require(:booking).permit(:start_date, :end_date, :departure, :arrival)
+  params.require(:booking).permit(:start_date, :end_date, :arrival)
 end
