@@ -1,7 +1,7 @@
 class AirplanesController < ApplicationController
   def index
-    if params[:query].present? && !Airplane.near(params[:query], 10000).empty?
-      @airplanes = Airplane.near(params[:query], 10)
+    if params[:query].present? && !Airplane.near(params[:query], 1000).empty?
+      @airplanes = Airplane.near(params[:query], 1000)
     else
       @airplanes = Airplane.geocoded
       @message = "There are no available planes in your area, please see other locations"
@@ -14,6 +14,8 @@ class AirplanesController < ApplicationController
         }
       end
   end
+
+  # I need to show the airplane.airport as bookings arrival after the booking date?
     # when Date.now > Booking.end_date
     # #@airplane.airport = bookings.arrival
 
