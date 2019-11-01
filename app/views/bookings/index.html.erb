@@ -4,29 +4,32 @@
       <div class="cards">
          <div class="booking show">
           <h2>Upcoming Trips</h2>
-            <ul>
+
             <% @bookings.each do |booking| %>
             <% if booking.start_date > DateTime.now.to_date  %>
-            <li><%= link_to "#{booking.airplane.title}", booking_path(booking) %></li>
+            <li><%= link_to "Airport: #{booking.airplane.airport}, Type: #{booking.airplane.title}, #{booking.start_date} to #{booking.end_date}", booking_path(booking) %></li>
             <% else %>
             <% end %>
           <% end %>
-            </ul>
+
+
         </div>
       </div>
     </div>
+
     <div class="col-sm-6">
       <div class="cards">
          <div class="booking show">
           <h2>Previous Trips</h2>
-            <ul>
+
             <% @bookings.each do |booking| %>
             <% if booking.start_date < DateTime.now.to_date  %>
-            <li><%= link_to "#{booking.airplane.title}", booking_path(booking) %></li>
+            <li><%= link_to "Airport: #{booking.airplane.airport}, Type: #{booking.airplane.title}, #{booking.start_date} to #{booking.end_date}", booking_path(booking) %></li>
             <% else %>
           <% end %>
         <% end %>
-            </ul>
+
+
         </div>
       </div>
     </div>
