@@ -7,7 +7,6 @@ class Booking < ApplicationRecord
   validate :end_date_after_start_date
   after_create :change_airplane_location
 
-
   def change_airplane_location
     my_airplane = self.airplane
     my_airplane.airport = self.arrival
