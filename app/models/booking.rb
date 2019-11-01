@@ -5,6 +5,14 @@ class Booking < ApplicationRecord
 
   validates :start_date, :end_date, presence: true
   validate :end_date_after_start_date
+  after_create :change_airplane_location
+
+
+  def change_airplane_location
+    my_airplane = self.airplane
+    my_airplane.airport = self.arrival
+    my_airplane.save
+  end
 
   private
 
@@ -16,3 +24,5 @@ class Booking < ApplicationRecord
     end
   end
 end
+
+
