@@ -14,10 +14,21 @@
     </div>
     </div>
     <div class="d-flex justify-content-center pt-5 flex-column align-items-center">
-      <h3 class="text-center">My airplanes:</h3>
+      <h3 class="text-center">My Airplanes:</h3>
+      <ul class="pb-5 px-0 d-flex flex-wrap justify-content-center m-2 p-2">
       <% @airplanes.each do |airplane| %>
-        <%=link_to airplane.title , airplane_path(airplane) %>
+        <div class="text-center row mr-5">
+          <div class="card-trip pb-5 m-2" id="airplane-show">
+            <h2 style="font-size: 17px"><strong>My Airplanes:</strong></h2>
+            <div class="booking-show-p">
+              <p>Plane title: <%= airplane.title %></p>
+              <p>Plane ID:<%= airplane.id %></p>
+            </div>
+          </div>
+        </div>
       <% end %>
+      </ul>
+    </div>
       <h3 class="text-center">My bookings:</h3>
       <ul class="pb-5 px-0 d-flex flex-wrap justify-content-center">
       <% @bookings.each do |booking| %>
