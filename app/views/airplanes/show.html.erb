@@ -31,8 +31,8 @@
        <%= simple_form_for([@airplane, @booking]) do |f| %>
            <%= f.input :start_date, as: :string, type: :text %>
            <%= f.input :end_date, as: :string, type: :text %>
-           <%= f.input :departure, as: :string, type: :text %>
-           <%= f.input :arrival, as: :string, type: :text, input_html: {id: "search-airport"}  %>
+           <%= f.input :departure, as: :string, type: :text, input_html: {id: "search-airport"} %>
+           <%= f.input :arrival, as: :string, type: :text, input_html: {id: "search-airport2"}  %>
            <%= f.submit "Book", class: "btn btn-primary" %>
         <% end %>
     <% end %>
