@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   def profile
     @user = current_user
+    authorize @user
     @bookings = @user.bookings.where("start_date > ?", 1.days.ago)
     @airplanes = @user.airplanes
     # raise

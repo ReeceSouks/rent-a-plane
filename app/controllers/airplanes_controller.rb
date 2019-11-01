@@ -19,12 +19,14 @@ class AirplanesController < ApplicationController
 
   def show
     set_airplane
+    authorize @airplane
     @reviews = @airplane.reviews
     @booking = Booking.new
   end
 
   def new
     @airplane = Airplane.new
+    authorize @airplane
     if user_signed_in?
       if current_user.present?
       else
@@ -39,6 +41,7 @@ class AirplanesController < ApplicationController
 
   def create
     @airplane = Airplane.new(airplane_params)
+    authorize @airplane
     @airplane.user = current_user
     if @airplane.save
       redirect_to airplane_path(@airplane), notice: "Your plane has been listed!"
@@ -49,10 +52,12 @@ class AirplanesController < ApplicationController
 
   def edit
     set_airplane
+    authorize @airplane
   end
 
   def update
     set_airplane
+    authorize @airplane
     if @airplane.update(airplane_params)
       redirect_to airplane_path(@airplane)
     else
@@ -62,6 +67,7 @@ class AirplanesController < ApplicationController
 
   def destroy
     set_airplane
+    authorize @airplane
     @airplane.destroy
     redirect_to profile_path
   end
